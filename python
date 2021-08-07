@@ -1,0 +1,60 @@
+#Program to demonstrate object oriented programming
+class person:
+    def message(self):
+        print('This is the Base class !!')
+
+class employee(person):
+    def getinfo(self):
+        self.name = input('Enter the name of the employee : ')
+        self.gender = input('Enter the Gender of the employee : ')
+        self.post = input("Enter the post of the employee : ")
+    def putinfo(self):
+        print("The Name of the Employee : ",self.name)
+        print("The Gender of the Employee : ",self.gender)
+        print("The Post of the Employee : ",self.post)
+        
+class empsalary(employee):
+    def getsal(self):
+        self.salary = int(input("Enter the salary : "))
+    def putsal(self):
+        print('The salary of the Employee : ',self.salary)
+        
+class student(person):
+    def getinfo(self):
+        self.name = input("Enter the Name of the student : ")
+        self.age = int(input("Enter the Age of the student : "))
+        self.year = input("Enter the Class of the student : ")
+
+class marks:
+    def get(s):
+        print('Enter the marks of student :-')
+        s.m1 = int(input())
+        s.m2 = int(input())
+        s.m3 = int(input())
+        s.m4 = int(input())
+        s.m5 = int(input())
+    def set(s):
+        s.sum = s.m1 + s.m2 + s.m3 + s.m4 + s.m5
+
+class result(student,marks):
+    def putinfo(self):
+        print("The Name of the Student : ",self.name)
+        print("The Age of the Student : ",self.age)
+        print("The Class of the Student : ",self.year)
+    def put(s):
+        print("The total marks of "+s.name+" is ",s.sum)
+
+stud = student()
+stud.message()
+res = result()
+res.getinfo()
+res.get()
+res.set()
+res.putinfo()
+res.put()
+sal = empsalary()
+sal.message()
+sal.getinfo()
+sal.getsal()
+sal.putinfo()
+sal.putsal()
